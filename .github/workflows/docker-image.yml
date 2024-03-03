@@ -18,7 +18,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
-          platforms: 'arm64,arm'
+          platforms: 'arm64'
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Login to GitHub Container Registry
@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/arm/7,linux/arm64
+          platforms: linux/arm64
           push: true
           tags: |
             ghcr.io/litinoveweedle/wyoming-openwakeword:latest

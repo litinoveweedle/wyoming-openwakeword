@@ -4,7 +4,8 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends avahi-utils libopenblas-dev
+    apt-get install --yes --no-install-recommends avahi-utils libopenblas-dev \
+    rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true
 
 WORKDIR /app
 
